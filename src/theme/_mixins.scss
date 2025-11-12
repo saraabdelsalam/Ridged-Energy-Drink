@@ -1,0 +1,258 @@
+// ==============================================
+// RIDGED ENERGY DRINK - SCSS MIXINS
+// ==============================================
+
+@import 'variables';
+
+// ==============================================
+// BUTTON MIXINS
+// ==============================================
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  border: none;
+  border-radius: $border-radius-xl;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-base;
+  position: relative;
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $color-primary;
+  color: $color-text-light;
+  
+  &:hover {
+    background-color: darken($color-primary, 8%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $color-surface-primary;
+  color: $color-text-primary;
+  
+  &:hover {
+    background-color: $color-surface-white;
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
+}
+
+// ==============================================
+// LAYOUT MIXINS
+// ==============================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin container($max-width: $breakpoint-xl) {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-base;
+}
+
+// ==============================================
+// NAVIGATION MIXINS
+// ==============================================
+
+@mixin nav-container {
+  @include flex-between;
+  margin: $spacing-base;
+  position: sticky;
+  top: 0;
+  background-color: $color-surface-white;
+  z-index: $z-index-sticky;
+  padding: 0; // Remove default padding for better control
+}
+
+@mixin nav-menu {
+  display: flex;
+  gap: $spacing-base;
+  align-items: center;
+  background-color: $color-surface-primary;
+  border-radius: $border-radius-2xl;
+}
+
+@mixin nav-link {
+  text-decoration: none;
+  color: $color-text-primary;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-xl;
+  transition: all $transition-base;
+  position: relative;
+  
+  &:hover {
+    background-color: $color-surface-white;
+    color: $color-primary;
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
+  
+  &.active {
+    background-color: $color-primary;
+    color: $color-text-light;
+  }
+}
+
+// Mobile navigation mixins
+@mixin nav-mobile-container {
+  display: flex;
+  align-items: center;
+  gap: $spacing-base;
+}
+
+@mixin nav-mobile-button {
+  background: transparent !important;
+  border: none !important;
+  color: $color-text-primary !important;
+  font-size: 1.2rem !important;
+  width: 40px !important;
+  height: 40px !important;
+  
+  &:hover {
+    background: $color-surface-primary !important;
+    color: $color-primary !important;
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px $color-primary !important;
+  }
+}
+
+// Show/hide based on screen size
+@mixin desktop-only {
+  display: flex;
+  
+  @include tablet-down {
+    display: none !important;
+  }
+}
+
+@mixin mobile-only {
+  display: none;
+  
+  @include tablet-down {
+    display: flex !important;
+  }
+}
+
+// ==============================================
+// CARD MIXINS
+// ==============================================
+
+@mixin card-base {
+  background-color: $color-surface-card;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-base;
+  overflow: hidden;
+}
+
+@mixin card-hover {
+  transition: all $transition-base;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+// ==============================================
+// TYPOGRAPHY MIXINS
+// ==============================================
+
+@mixin heading-primary {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+}
+
+@mixin heading-secondary {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-semibold;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+@mixin text-primary {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+@mixin text-secondary {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+// ==============================================
+// MEDIA QUERY MIXINS
+// ==============================================
+
+@mixin mobile-up {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// Mobile-first approach - hide on larger screens
+@mixin mobile-down {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: #{$breakpoint-xl - 1px}) {
+    @content;
+  }
+}

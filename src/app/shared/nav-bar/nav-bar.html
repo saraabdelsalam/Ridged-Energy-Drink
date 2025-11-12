@@ -1,1 +1,27 @@
-
+<div class="navbar">
+    <img src="/assets/images/NavBar-Logo.png" alt="Logo" class="logo">
+    
+    <!-- Desktop Menu Items (hidden on tablet/mobile) -->
+    <div class="menu-items desktop-menu">
+        <a href="/" (click)="navigateTo('/')">Home</a>
+        <a href="#" (click)="navigateTo('/')">Products</a>
+        <a href="#" (click)="navigateTo('/')">About Us</a>
+        <a href="#" (click)="navigateTo('/')">Contact</a>
+    </div>
+    
+    <!-- Right side container for icons and mobile menu -->
+    <div class="navbar-right">
+        <img src="/assets/images/Nav-icons.png" alt="Icons" class="icons">
+        
+        <!-- Mobile/Tablet Menu (hidden on desktop) -->
+        <div class="mobile-menu">
+            <p-menu #menu [model]="items" [popup]="true" />
+            <p-button 
+                (click)="menu.toggle($event)" 
+                icon="pi pi-bars"
+                [text]="true"
+                styleClass="mobile-menu-button"
+                aria-label="Open menu" />
+        </div>
+    </div>
+</div>

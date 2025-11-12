@@ -1,0 +1,117 @@
+// ==============================================
+// NAVIGATION BAR COMPONENT
+// ==============================================
+
+@import '../../../theme/variables';
+@import '../../../theme/mixins';
+
+.navbar {
+    @include nav-container;
+    
+    .logo {
+        height: 32px;
+        width: auto;
+        flex-shrink: 0; // Prevent logo from shrinking
+    }
+    
+    // Desktop menu items - hidden on tablet and below
+    .desktop-menu {
+        @include nav-menu;
+        @include desktop-only;
+        
+        a {
+            @include nav-link;
+        }
+    }
+    
+    // Right side container for icons and mobile menu
+    .navbar-right {
+        @include nav-mobile-container;
+        
+        .icons {
+            height: 32px;
+            width: auto;
+            flex-shrink: 0;
+        }
+        
+        // Mobile menu - shown only on tablet and below
+        .mobile-menu {
+            @include mobile-only;
+            position: relative;
+            
+            // Custom styling for PrimeNG button
+            .mobile-menu-button {
+                @include nav-mobile-button;
+            }
+        }
+    }
+}
+
+// ==============================================
+// PRIMENG COMPONENT OVERRIDES
+// ==============================================
+
+// Style the PrimeNG menu to match our theme
+:host ::ng-deep {
+    .p-menu {
+        border: 1px solid $color-surface-primary;
+        border-radius: $border-radius-lg;
+        box-shadow: $shadow-xl;
+        background: $color-surface-white;
+        
+        .p-menuitem {
+            .p-menuitem-link {
+                padding: $spacing-md $spacing-lg;
+                color: $color-text-primary;
+                transition: all $transition-base;
+                border-radius: $border-radius-base;
+                margin: $spacing-xs;
+                
+                &:hover {
+                    background-color: $color-surface-primary;
+                    color: $color-primary;
+                }
+                
+                .p-menuitem-text {
+                    font-weight: $font-weight-medium;
+                    font-size: $font-size-base;
+                }
+                
+                .p-menuitem-icon {
+                    color: $color-primary;
+                    margin-right: $spacing-sm;
+                }
+            }
+        }
+    }
+    
+    // Style the mobile menu button
+    .p-button.mobile-menu-button {
+        @include nav-mobile-button;
+    }
+}
+
+// ==============================================
+// RESPONSIVE ADJUSTMENTS
+// ==============================================
+
+@include tablet-down {
+    .navbar {
+        margin: $spacing-sm; // Smaller margin on mobile
+        padding: 0 $spacing-sm; // Add some internal padding
+    }
+}
+
+@include mobile-down {
+    .navbar {
+        .logo {
+            height: 28px; // Slightly smaller logo on mobile
+        }
+        
+        .navbar-right {
+            .icons {
+                height: 28px; // Smaller icons on mobile
+            }
+        }
+    }
+}
