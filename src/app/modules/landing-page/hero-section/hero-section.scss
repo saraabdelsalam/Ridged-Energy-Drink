@@ -1,0 +1,59 @@
+@import '../../../../theme/variables';
+@import '../../../../theme/mixins';
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+ 
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+  }
+
+  .hero-text {
+    flex: 1;
+    z-index: 2;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: $font-weight-bold;
+      color: $color-primary-text; 
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: $font-weight-medium;
+      color: $color-text-secondary;
+      width: 50%;
+    }
+  }
+
+  .hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ridged-bg {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .can-image {
+      position: absolute;
+      z-index: 2;
+    }
+  }
+}
