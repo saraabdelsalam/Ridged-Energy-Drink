@@ -37,7 +37,6 @@
         // Mobile menu - shown only on tablet and below
         .mobile-menu {
             @include mobile-only;
-            position: relative;
             
             // Custom styling for PrimeNG button
             .mobile-menu-button {
