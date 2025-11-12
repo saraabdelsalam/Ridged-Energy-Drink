@@ -15,7 +15,7 @@
         
         <!-- Mobile/Tablet Menu (hidden on desktop) -->
         <div class="mobile-menu">
-            <p-menu #menu [model]="items" [popup]="true" />
+            <p-menu #menu [model]="items" [popup]="true" appendTo=".navbar-right"/>
             <p-button 
                 (click)="menu.toggle($event)" 
                 icon="pi pi-bars"

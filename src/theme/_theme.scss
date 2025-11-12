@@ -92,18 +92,6 @@ body {
 .btn-primary { @include button-primary; }
 .btn-secondary { @include button-secondary; }
 
-// ==============================================
-// COMPONENT BASE STYLES
-// ==============================================
-
-.card {
-  @include card-base;
-  
-  &.card-hover {
-    @include card-hover;
-  }
-}
-
 .container {
   @include container;
 }

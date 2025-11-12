@@ -159,26 +159,6 @@
 }
 
 // ==============================================
-// CARD MIXINS
-// ==============================================
-
-@mixin card-base {
-  background-color: $color-surface-card;
-  border-radius: $border-radius-lg;
-  box-shadow: $shadow-base;
-  overflow: hidden;
-}
-
-@mixin card-hover {
-  transition: all $transition-base;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: $shadow-xl;
-  }
-}
-
-// ==============================================
 // TYPOGRAPHY MIXINS
 // ==============================================
 
