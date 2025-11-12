@@ -3,5 +3,6 @@ export interface FeedBack {
     userName: string;
     userPosition: string;
     userFeedback: string;
+    rate: number;
     userImage: string;
 }
