@@ -1,1 +1,6 @@
-<p>feedback-item works!</p>
+<p-card header={{feedback.userName}} subheader={{feedback.userPosition}}>
+    <p-avatar image={{feedback.userImage}} class="mr-2" size="large" shape="circle" />
+    <p class="m-0">
+        {{feedback.userFeedback}}
+    </p>
+</p-card>

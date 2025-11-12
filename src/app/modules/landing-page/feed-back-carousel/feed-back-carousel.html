@@ -1,0 +1,31 @@
+<div class="feedback-carousel">
+    <div class="carousel-container">
+        <div class="navigation-area">
+            <p>Top Reviews From United States</p>
+            <div class="navigation-buttons">
+                <button 
+                    type="button" 
+                    class="nav-button prev-button"
+                    (click)="previousFeedback()"
+                    [disabled]="!hasPrevious">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button 
+                    type="button" 
+                    class="nav-button next-button"
+                    (click)="nextFeedback()"
+                    [disabled]="!hasNext">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="carousel-content">
+            <app-feedback-item [feedback]="CurrentFeedbacks"></app-feedback-item>
+        </div>
+    </div>
+</div>

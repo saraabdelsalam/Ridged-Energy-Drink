@@ -1,0 +1,68 @@
+@import '../../../theme/variables';
+@import '../../../theme/mixins';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.p-card {
+  background: $color-surface-card;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  border: none;
+  padding: $spacing-2xl;
+  transition: $transition-base;
+  
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+  
+  .p-card-header {
+    padding: 0;
+    margin-bottom: $spacing-base;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    font-size: $font-size-lg;
+  }
+  
+  .p-card-subheader {
+    padding: 0;
+    margin-bottom: $spacing-xl;
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+  }
+  
+  .p-card-content {
+    padding: 0;
+    
+    .p-avatar {
+      margin-bottom: $spacing-base;
+    }
+    
+    p {
+      font-size: $font-size-base;
+      line-height: $line-height-relaxed;
+      color: $color-text-primary;
+      margin: 0;
+      font-weight: $font-weight-regular;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-md) {
+  .p-card {
+    padding: $spacing-xl;
+    
+    .p-card-header {
+      font-size: $font-size-base;
+    }
+    
+    .p-card-content p {
+      font-size: $font-size-sm;
+    }
+  }
+}
