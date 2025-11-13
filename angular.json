@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/Ridged-Energy-Drink",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -29,10 +30,18 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/primeicons",
+                "output": "primeicons"
               }
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "externalDependencies": [
+              "primeicons"
             ]
           },
           "configurations": {
