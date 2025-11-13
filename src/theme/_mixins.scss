@@ -226,7 +226,7 @@
 }
 
 @mixin tablet-down {
-  @media (max-width: #{$breakpoint-lg - 1px}) {
+  @media (max-width: #{$breakpoint-md - 1px}) {
     @content;
   }
 }

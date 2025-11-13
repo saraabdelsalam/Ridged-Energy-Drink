@@ -110,7 +110,11 @@
 }
 
 // Responsive design
-@media (max-width: $breakpoint-xl) {
+@include tablet-down {
+  .carousel-container{
+    flex-direction: column;
+    gap: $spacing-2xl;
+  }
   .feedback-carousel {
     padding: $spacing-3xl $spacing-xl;
     
@@ -124,36 +128,6 @@
         font-size: $font-size-xl;
         max-width: 250px;
       }
-    }
-  }
-}
-
-@media (max-width: $breakpoint-md) {
-  .feedback-carousel {
-    padding: $spacing-2xl $spacing-base;
-    
-    .carousel-container {
-      flex-direction: column;
-      gap: $spacing-2xl;
-      text-align: center;
-    }
-    
-    .navigation-area {
-      align-items: center;
-      
-      p {
-        text-align: center;
-        max-width: none;
-        font-size: $font-size-lg;
-      }
-      
-      .navigation-buttons {
-        justify-content: center;
-      }
-    }
-    
-    .carousel-content {
-      max-width: 100%;
     }
   }
 }

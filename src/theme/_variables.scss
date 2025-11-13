@@ -12,7 +12,7 @@ $color-primary-text: #0F4026;     // Primary text variant
 $color-primary-hover: #0E3F25;    // Hover state (same as primary)
 
 // Secondary Colors
-$color-secondary: #7E9583;        // Muted green (banners)
+$color-secondary: #abc0af;        // Muted green (banners)
 $color-secondary-text: #7F7F7F;   // Secondary text
 
 // Surface Colors
@@ -103,7 +103,7 @@ $shadow-xl: 0 20px 25px $color-shadow-medium;
 // TRANSITIONS
 // ==============================================
 
-$transition-fast: 0.15s ease;
+$transition-fast: 0.1s ease;
 $transition-base: 0.3s ease;    // navbar transition
 $transition-slow: 0.5s ease;
 

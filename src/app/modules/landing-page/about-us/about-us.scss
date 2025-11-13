@@ -1,0 +1,152 @@
+@use '../../../../theme/mixins' as *;
+
+.about-us-section {
+  padding: $spacing-3xl 0;
+  background-color: $color-secondary;
+  border-radius:$border-radius-2xl ;
+
+  @include mobile-down {
+    padding: $spacing-2xl 0;
+  }
+
+  .about-us-container {
+    @include container();
+    
+    @include mobile-down {
+      padding: 0 $spacing-base;
+    }
+  }
+
+  .about-us-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-3xl;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include tablet-down {
+      grid-template-columns: 1fr;
+      gap: $spacing-2xl;
+      text-align: center;
+    }
+  }
+
+  .text-content {
+    .section-title {
+      @include heading-primary;
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-sm;
+      color: $color-text-secondary;
+      font-weight: $font-weight-regular;
+
+      @include tablet-down {
+        font-size: $font-size-2xl;
+      }
+
+      @include mobile-down {
+        font-size: $font-size-xl;
+      }
+    }
+
+    .section-subtitle {
+      @include heading-primary;
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-xl;
+      color: $color-text-primary;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-tight;
+
+      @include tablet-down {
+        font-size: $font-size-3xl;
+        margin-bottom: $spacing-lg;
+      }
+
+      @include mobile-down {
+        font-size: $font-size-2xl;
+      }
+    }
+
+    .description {
+      @include text-secondary;
+      font-size: $font-size-lg;
+      line-height: $line-height-relaxed;
+      margin: 0;
+      max-width: 90%;
+
+      @include tablet-down {
+        font-size: $font-size-base;
+        max-width: 100%;
+      }
+
+      @include mobile-down {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  .stats-content {
+    display: flex;
+    gap: $spacing-3xl;
+    justify-content: center;
+
+    @include tablet-down {
+      gap: $spacing-2xl;
+      justify-content: center;
+    }
+
+    @include mobile-down {
+      gap: $spacing-xl;
+    }
+
+    .stat-item {
+      text-align: center;
+
+      .stat-number {
+        @include heading-primary;
+        font-size: 4rem;
+        font-weight: $font-weight-extrabold;
+        color: $color-text-primary;
+        line-height: 1;
+        margin-bottom: $spacing-sm;
+        transition: all $transition-fast;
+
+        @include tablet-down {
+          font-size: 3.5rem;
+        }
+
+        @include mobile-down {
+          font-size: 2.5rem;
+        }
+      }
+
+      .stat-label {
+        @include text-secondary;
+        font-size: $font-size-sm;
+        line-height: $line-height-normal;
+        max-width: 120px;
+        margin: 0 auto;
+
+        @include mobile-down {
+          font-size: $font-size-xs;
+          max-width: 100px;
+        }
+      }
+    }
+  }
+
+  // Additional responsive adjustments
+  @include large-desktop-up {
+    .about-us-content {
+      gap: calc($spacing-3xl * 1.5);
+    }
+    
+    .text-content .section-subtitle {
+      font-size: 2.75rem;
+    }
+    
+    .stats-content {
+      gap: calc($spacing-3xl * 1.5);
+    }
+  }
+}
