@@ -6,6 +6,41 @@
   width: 100%;
 }
 
+// Deep override for PrimeNG card components on mobile
+:host ::ng-deep {
+  @include tablet-down {
+    .p-card {
+      background: $color-surface-white !important;
+      
+      .p-card-header,
+      .p-card-title {
+        color: $color-text-primary !important;
+        -webkit-text-fill-color: $color-text-primary !important;
+      }
+      
+      .p-card-subtitle,
+      .p-card-subheader {
+        color: #7F7F7F !important;
+        -webkit-text-fill-color: #7F7F7F !important;
+      }
+      
+      .p-card-content {
+        * {
+          color: $color-text-primary !important;
+          -webkit-text-fill-color: $color-text-primary !important;
+        }
+      }
+      
+      // Rating component
+      .p-rating {
+        .p-rating-icon {
+          color: #ffd700 !important;
+        }
+      }
+    }
+  }
+}
+
 .p-card {
   background: $color-surface-card;
   border-radius: $border-radius-lg;
@@ -56,16 +91,29 @@
 }
 
 // Responsive adjustments
-@media (max-width: $breakpoint-md) {
+@include tablet-down {
   .p-card {
     padding: $spacing-xl;
+    // Force solid background on mobile to prevent transparency issues
+    background: $color-surface-white !important;
     
     .p-card-header {
       font-size: $font-size-base;
+      // Force color on mobile devices
+      color: $color-text-primary !important;
+      -webkit-text-fill-color: $color-text-primary !important;
+    }
+    
+    .p-card-subheader {
+      color: #7F7F7F !important;
+      -webkit-text-fill-color: #7F7F7F !important;
     }
     
     .p-card-content p {
       font-size: $font-size-sm;
+      // Force color on mobile devices
+      color: $color-text-primary !important;
+      -webkit-text-fill-color: $color-text-primary !important;
     }
   }
 }

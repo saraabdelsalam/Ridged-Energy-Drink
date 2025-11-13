@@ -120,10 +120,32 @@
     
     // iOS/Safari specific menu fixes
     :host ::ng-deep .p-menu {
+        background-color: $color-surface-white !important;
+        
         .p-menuitem-link {
+            color: $color-text-primary !important;
+            -webkit-text-fill-color: $color-text-primary !important;
+            
             * {
                 -webkit-text-fill-color: $color-text-primary !important;
                 color: $color-text-primary !important;
+            }
+            
+            .p-menuitem-text {
+                color: $color-text-primary !important;
+                -webkit-text-fill-color: $color-text-primary !important;
+                font-weight: $font-weight-medium !important;
+            }
+        }
+        
+        .p-menuitem {
+            .p-menuitem-content {
+                .p-menuitem-link {
+                    span {
+                        color: $color-text-primary !important;
+                        -webkit-text-fill-color: $color-text-primary !important;
+                    }
+                }
             }
         }
     }
