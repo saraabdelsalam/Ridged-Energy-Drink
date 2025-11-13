@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
 import { MenuItem } from 'primeng/api';
-import "primeicons/primeicons.css";
 
 @Component({
   selector: 'app-nav-bar',
