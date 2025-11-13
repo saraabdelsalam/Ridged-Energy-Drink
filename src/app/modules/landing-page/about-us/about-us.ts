@@ -37,8 +37,9 @@ export class AboutUsComponent implements AfterViewInit {
         if (entry.isIntersecting) {
           const target = entry.target as HTMLElement;
           const targetValue = parseInt(target.getAttribute('data-target') || '0');
-          animateValue(target, 0, targetValue, 300);
-          observer.unobserve(target);
+          if(entry.isIntersecting){
+          animateValue(target, 0, targetValue, 400);
+          }
         }
       });
     });

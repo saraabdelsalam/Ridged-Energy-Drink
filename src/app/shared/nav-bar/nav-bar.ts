@@ -34,7 +34,7 @@ export class NavBar {
       {
         label: 'About Us',
         icon: 'pi pi-info-circle',
-        command: () => this.scrollToSection('about-us-section')
+        command: () => this.scrollToSection('About-Us')
       },
       {
         label: 'Contact',
