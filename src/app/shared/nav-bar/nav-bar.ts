@@ -38,7 +38,7 @@ export class NavBar {
       {
         label: 'Contact',
         icon: 'pi pi-phone',
-        command: () => this.scrollToSection('contact-section' )
+        command: () => this.scrollToSection('footer')
       }
     ];
   }
