@@ -1,5 +1,5 @@
 <p-card header={{feedback.userName}} subheader={{feedback.userPosition}}>
-    <p-avatar image={{feedback.userImage}} class="mr-2" size="large" shape="circle" />
+    <p-avatar image={{feedback.userImage}} class="m-2" size="large" shape="circle" />
     <p-rating [(ngModel)]="feedback.rate" readonly="true"></p-rating>
     <p class="m-0">
         {{feedback.userFeedback}}

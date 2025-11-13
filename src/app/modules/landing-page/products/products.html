@@ -1,0 +1,20 @@
+<p-carousel
+  [value]="getProducts()"
+  [numVisible]="3"
+  [numScroll]="1"
+  [autoplayInterval]="5000"
+  [circular]="true"
+  [showIndicators]="false"
+  [showNavigators]="true"
+>
+  <ng-template let-product pTemplate="item">
+    <div class="product-item">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+      <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <span class="price">${{ product.price }}</span>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>

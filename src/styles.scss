@@ -4,10 +4,62 @@
 
 // Import our theme system
 @import 'theme/theme';
-
+@import 'theme/variables';
+@import 'theme/mixins';
 /* ==============================================
    ADDITIONAL GLOBAL STYLES
    ============================================== */
+.p-carousel .product-image {
+  width: 100% !important;
+  height: 408px !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 auto;
+  background: transparent !important;
+  border: none !important;
+  &:hover {
+    transform: translateY(-15px) rotateY(10deg) !important;
+    transition: transform 0.3s ease-in-out !important;
+  }
+}
+
+::ng-deep .p-carousel {
+  .p-carousel-content {
+    .p-carousel-container {
+      .p-carousel-items-content {
+        .p-carousel-item {
+          .product-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            .product-info {
+              text-align: center;
+              margin-top: 1rem;
+              h3 {
+                margin: 0;
+                font-size: 1.2rem;
+              }
+              p {
+                margin: 0.5rem 0;
+                font-size: 0.9rem;
+                color: $color-text-primary;
+              }
+              .price {
+                font-weight: $font-weight-semibold;
+                color: $color-text-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // You can add additional global styles here
 // that are specific to your application
