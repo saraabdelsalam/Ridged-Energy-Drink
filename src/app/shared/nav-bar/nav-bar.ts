@@ -24,27 +24,28 @@ export class NavBar {
       {
         label: 'Home',
         icon: 'pi pi-home',
-        command: () => this.router.navigate(['/'])
+        command: () => this.scrollToSection('Hero-Section')
       },
       {
         label: 'Products',
         icon: 'pi pi-box',
-        command: () => this.router.navigate(['/'])
+        command: () => this.scrollToSection('Products')
       },
       {
         label: 'About Us',
         icon: 'pi pi-info-circle',
-        command: () => this.router.navigate(['/'])
+        command: () => this.scrollToSection('about-us-section')
       },
       {
         label: 'Contact',
         icon: 'pi pi-phone',
-        command: () => this.router.navigate(['/'])
+        command: () => this.scrollToSection('contact-section' )
       }
     ];
   }
+  
+scrollToSection(sectionId: string): void {
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+}
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
-  }
 }

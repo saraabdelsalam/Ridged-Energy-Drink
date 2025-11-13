@@ -17,9 +17,19 @@
   margin: 0 auto;
   background: transparent !important;
   border: none !important;
+  
   &:hover {
     transform: translateY(-15px) rotateY(10deg) !important;
-    transition: transform 0.3s ease-in-out !important;
+    transition: transform $transition-base !important;
+  }
+  
+  // Responsive image sizing using theme mixins
+  @include tablet-down {
+    height: 320px !important;
+  }
+  
+  @include mobile-down {
+    height: 250px !important;
   }
 }
 
@@ -33,25 +43,76 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
+            padding: $spacing-base;
             background: transparent;
             border: none;
             box-shadow: none;
+            
+            // Responsive padding using theme system
+            @include tablet-down {
+              padding: $spacing-md;
+            }
+            
+            @include mobile-down {
+              padding: $spacing-sm;
+            }
+            
             .product-info {
               text-align: center;
-              margin-top: 1rem;
+              margin-top: $spacing-base;
+              
+              @include tablet-down {
+                margin-top: $spacing-md;
+              }
+              
+              @include mobile-down {
+                margin-top: $spacing-sm;
+              }
+              
               h3 {
                 margin: 0;
-                font-size: 1.2rem;
+                font-size: $font-size-xl;
+                
+                // Responsive font sizes using theme variables
+                @include tablet-down {
+                  font-size: $font-size-lg;
+                }
+                
+                @include mobile-down {
+                  font-size: $font-size-base;
+                }
               }
+              
               p {
-                margin: 0.5rem 0;
-                font-size: 0.9rem;
+                margin: $spacing-sm 0;
+                font-size: $font-size-sm;
                 color: $color-text-primary;
+                
+                // Responsive font sizes and spacing
+                @include tablet-down {
+                  font-size: $font-size-xs;
+                  margin: $spacing-xs 0;
+                }
+                
+                @include mobile-down {
+                  font-size: $font-size-xs;
+                  margin: $spacing-xs 0;
+                }
               }
+              
               .price {
                 font-weight: $font-weight-semibold;
                 color: $color-text-primary;
+                font-size: $font-size-base;
+                
+                // Responsive font sizes for price
+                @include tablet-down {
+                  font-size: $font-size-sm;
+                }
+                
+                @include mobile-down {
+                  font-size: $font-size-sm;
+                }
               }
             }
           }
@@ -60,6 +121,3 @@
     }
   }
 }
-
-// You can add additional global styles here
-// that are specific to your application

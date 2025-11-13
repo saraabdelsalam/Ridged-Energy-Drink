@@ -79,7 +79,7 @@
   margin: $spacing-base;
   position: sticky;
   top: 0;
-  background-color: $color-surface-white;
+  background-color: $color-surface-bg;
   z-index: $z-index-sticky;
   padding: 0; // Remove default padding for better control
 }
@@ -104,7 +104,7 @@
   position: relative;
   
   &:hover {
-    background-color: $color-surface-white;
+    background-color: $color-surface-bg;
     color: $color-primary;
     box-shadow: $shadow-lg;
     transform: translateY(-1px);
