@@ -6,6 +6,45 @@
 @import 'theme/theme';
 @import 'theme/variables';
 @import 'theme/mixins';
+
+/* ==============================================
+   CROSS-BROWSER COMPATIBILITY RESETS
+   ============================================== */
+
+* {
+  // Prevent iOS text size adjustment
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  
+  // Better font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  // Prevent iOS bounce scroll
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+  
+  // Ensure consistent font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Fix for iOS Safari input zooming
+input, select, textarea {
+  font-size: 16px !important; // Prevents iOS zoom on focus
+}
+
+// Ensure all text elements have proper color inheritance
+p, span, div, a, button, label, h1, h2, h3, h4, h5, h6 {
+  -webkit-text-fill-color: inherit;
+  color: inherit;
+}
+
 /* ==============================================
    ADDITIONAL GLOBAL STYLES
    ============================================== */

@@ -11,12 +11,6 @@
   }
 }
 
-  .subscribe-divider {
-    height: 2px;
-    background-color: $color-text-primary;
-    width: 100%;
-  }
-
 
 // ==============================================
 // FOOTER CONTENT GRID
@@ -67,54 +61,6 @@
         
         &:hover {
           color: $color-primary;
-        }
-      }
-    }
-  }
-}
-
-// FAQ Column Specific Styling
-.faq-column {
-  .faq-title {
-    font-size: $font-size-xl;
-    line-height: $line-height-normal;
-    margin-bottom: $spacing-xl;
-    max-width: 400px;
-    
-    @include mobile-down {
-      font-size: $font-size-lg;
-    }
-  }
-  
-  .faq-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    
-    li {
-      margin-bottom: $spacing-lg;
-      
-      a {
-        color: $color-text-primary;
-        text-decoration: none;
-        font-size: $font-size-base;
-        font-weight: $font-weight-medium;
-        display: flex;
-        align-items: center;
-        gap: $spacing-sm;
-        transition: all $transition-base;
-        
-        i {
-          font-size: $font-size-sm;
-          transition: transform $transition-base;
-        }
-        
-        &:hover {
-          color: $color-primary;
-          
-          i {
-            transform: translateX(4px);
-          }
         }
       }
     }

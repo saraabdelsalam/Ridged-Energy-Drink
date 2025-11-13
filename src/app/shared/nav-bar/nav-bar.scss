@@ -56,10 +56,12 @@
         border: 1px solid $color-surface-primary;
         border-radius: $border-radius-lg;
         box-shadow: $shadow-xl;
-        background-color: $color-surface-white !important;
         background: $color-surface-white !important;
         right: 0;
         top: 2rem;
+        // iOS/Safari specific fixes
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         
         .p-menuitem {
             .p-menuitem-link {
@@ -68,6 +70,10 @@
                 transition: all $transition-base;
                 border-radius: $border-radius-base;
                 margin: $spacing-xs;
+                // Ensure text is always visible
+                -webkit-text-fill-color: $color-text-primary !important;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
                 
                 &:hover {
                     background-color: $color-surface-primary;
@@ -78,6 +84,12 @@
                     font-weight: $font-weight-medium;
                     font-size: $font-size-base;
                     color: $color-text-primary !important;
+                    display: inline-block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    -webkit-text-fill-color: $color-text-primary !important;
+                    -webkit-font-smoothing: antialiased;
+                    min-width: 60px;
                 }
                 
                 .p-menuitem-icon {
@@ -102,6 +114,18 @@
     .navbar {
         margin: $spacing-sm; // Smaller margin on mobile
         padding: 0 $spacing-sm; // Add some internal padding
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    // iOS/Safari specific menu fixes
+    :host ::ng-deep .p-menu {
+        .p-menuitem-link {
+            * {
+                -webkit-text-fill-color: $color-text-primary !important;
+                color: $color-text-primary !important;
+            }
+        }
     }
 }
 
