@@ -56,7 +56,8 @@
         border: 1px solid $color-surface-primary;
         border-radius: $border-radius-lg;
         box-shadow: $shadow-xl;
-        background: $color-surface-white;
+        background-color: $color-surface-white !important;
+        background: $color-surface-white !important;
         right: 0;
         top: 2rem;
         

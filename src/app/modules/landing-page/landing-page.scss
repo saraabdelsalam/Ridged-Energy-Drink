@@ -1,3 +1,15 @@
-*{
-    margin: 5rem;
+// ==============================================
+// LANDING PAGE LAYOUT
+// ==============================================
+
+@import '../../../theme/variables';
+@import '../../../theme/mixins';
+
+* {
+    margin: $spacing-2xl; // 2rem on desktop
+    
+    // Responsive margins using theme system
+    @include tablet-down {
+        margin: $spacing-base; // 1rem on tablet and mobile
+    }
 }
