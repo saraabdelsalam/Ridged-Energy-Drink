@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Footer Content Grid -->
+    <div class="footer-content">
+      <!-- Help & Information Column -->
+      <div class="footer-column">
+        <h3 class="column-title">Help & Information</h3>
+        <ul class="footer-links">
+          <li *ngFor="let link of footerLinks.helpInfo">
+            <a [href]="link.url">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- About Us Column -->
+      <div class="footer-column">
+        <h3 class="column-title">About Us</h3>
+        <ul class="footer-links">
+          <li *ngFor="let link of footerLinks.aboutUs">
+            <a [href]="link.url">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+      <!-- Logo Section -->
+      <div class="footer-logo-section">
+        <img src="/assets/images/NavBar-Logo.png" alt="RIDGED Energy Drink Logo" class="footer-logo">
+      </div>
+
+      <!-- Legal Links -->
+      <div class="footer-legal">
+        <a *ngFor="let link of legalLinks" [href]="link.url" class="legal-link">
+          {{ link.label }}
+        </a>
+      </div>
+
+      <!-- Copyright & Social Media -->
+      <div class="footer-info">
+        <p class="copyright">©{{ currentYear }} Copyright By Sara El-Gebaly - RIDGED</p>
+        
+        <div class="social-icons">
+          <a *ngFor="let social of socialLinks" 
+             [href]="social.url" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             [attr.aria-label]="social.name"
+             class="social-icon">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
