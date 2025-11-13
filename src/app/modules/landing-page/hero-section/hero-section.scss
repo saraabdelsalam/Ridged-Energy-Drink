@@ -37,7 +37,32 @@
       width: 50%;
     }
   }
+ @include tablet-down {
+    .hero-text {
+      h1 {
+        font-size: 2rem;
+        width: 100%;
+      }
 
+      p {
+        font-size: .8rem;
+        width: 100%;
+      }
+    }
+  }
+  @include mobile-down {
+    .hero-text {
+      h1 {
+        font-size: 1.25rem;
+        width: 100%;
+      }
+
+      p {
+        font-size: .8rem;
+        width: 100%;
+      }
+    }
+  }
   .hero-visual {
     flex: 1;
     position: relative;
@@ -54,6 +79,9 @@
     .can-image {
       position: absolute;
       z-index: 2;
+    }
+    @include tablet-down{
+      margin: 3rem 0;
     }
   }
 }
