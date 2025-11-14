@@ -60,6 +60,9 @@
         right: 0;
         top: 2rem;
         
+          // Override PrimeNG CSS variables for consistent styling
+        --p-menu-item-focus-color: #{$color-text-primary};
+        --p-menu-item-focus-background: #{$color-secondary-text};
         .p-menuitem {
             .p-menuitem-link {
                 padding: $spacing-md $spacing-lg;
