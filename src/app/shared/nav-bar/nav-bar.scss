@@ -59,9 +59,6 @@
         background: $color-surface-white !important;
         right: 0;
         top: 2rem;
-        // iOS/Safari specific fixes
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         
         .p-menuitem {
             .p-menuitem-link {
@@ -70,11 +67,6 @@
                 transition: all $transition-base;
                 border-radius: $border-radius-base;
                 margin: $spacing-xs;
-                // Ensure text is always visible
-                -webkit-text-fill-color: $color-text-primary !important;
-                -webkit-font-smoothing: antialiased;
-                text-rendering: optimizeLegibility;
-                
                 &:hover {
                     background-color: $color-surface-primary;
                     color: $color-primary;
@@ -87,7 +79,6 @@
                     display: inline-block !important;
                     visibility: visible !important;
                     opacity: 1 !important;
-                    -webkit-text-fill-color: $color-text-primary !important;
                     -webkit-font-smoothing: antialiased;
                     min-width: 60px;
                 }
@@ -114,8 +105,6 @@
     .navbar {
         margin: $spacing-sm; // Smaller margin on mobile
         padding: 0 $spacing-sm; // Add some internal padding
-        -webkit-text-size-adjust: 100%;
-        -webkit-font-smoothing: antialiased;
     }
     
     // iOS/Safari specific menu fixes
@@ -124,16 +113,13 @@
         
         .p-menuitem-link {
             color: $color-text-primary !important;
-            -webkit-text-fill-color: $color-text-primary !important;
             
             * {
-                -webkit-text-fill-color: $color-text-primary !important;
                 color: $color-text-primary !important;
             }
             
             .p-menuitem-text {
                 color: $color-text-primary !important;
-                -webkit-text-fill-color: $color-text-primary !important;
                 font-weight: $font-weight-medium !important;
             }
         }
@@ -143,7 +129,6 @@
                 .p-menuitem-link {
                     span {
                         color: $color-text-primary !important;
-                        -webkit-text-fill-color: $color-text-primary !important;
                     }
                 }
             }
