@@ -47,6 +47,7 @@
   transition: $transition-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 290px;
   
   &:hover {
     box-shadow: $shadow-lg;
@@ -91,7 +92,8 @@
     padding: $spacing-xl;
     // Force solid background on mobile to prevent transparency issues
     background: $color-surface-white !important;
-    
+    width: 315px;
+    max-height: 290px;
     .p-card-header {
       font-size: $font-size-base;
       // Force color on mobile devices

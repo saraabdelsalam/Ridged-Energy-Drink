@@ -127,10 +127,12 @@
     }
     
     .navigation-area {
-        order: 2;
       p {
-        font-size: $font-size-xl;
-        max-width: 250px;
+        font-size: $font-size-lg;
+        width: 100%;
+      }
+      .navigation-buttons{
+        display: none;
       }
     }
   }
