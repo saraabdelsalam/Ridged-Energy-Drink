@@ -63,28 +63,14 @@
         .p-menuitem {
             .p-menuitem-link {
                 padding: $spacing-md $spacing-lg;
-                color: $color-text-primary !important;
-                transition: all $transition-base;
                 border-radius: $border-radius-base;
-                margin: $spacing-xs;
-                &:hover {
-                    background-color: $color-surface-primary;
-                    color: $color-primary;
-                }
-                
+                margin: $spacing-xs;                
                 .p-menuitem-text {
-                    font-weight: $font-weight-medium;
-                    font-size: $font-size-base;
-                    color: $color-text-primary !important;
                     display: inline-block !important;
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                    -webkit-font-smoothing: antialiased;
                     min-width: 60px;
                 }
                 
                 .p-menuitem-icon {
-                    color: $color-primary;
                     margin-right: $spacing-sm;
                 }
             }
@@ -105,34 +91,6 @@
     .navbar {
         margin: $spacing-sm; // Smaller margin on mobile
         padding: 0 $spacing-sm; // Add some internal padding
-    }
-    
-    // iOS/Safari specific menu fixes
-    :host ::ng-deep .p-menu {
-        background-color: $color-surface-white !important;
-        
-        .p-menuitem-link {
-            color: $color-text-primary !important;
-            
-            * {
-                color: $color-text-primary !important;
-            }
-            
-            .p-menuitem-text {
-                color: $color-text-primary !important;
-                font-weight: $font-weight-medium !important;
-            }
-        }
-        
-        .p-menuitem {
-            .p-menuitem-content {
-                .p-menuitem-link {
-                    span {
-                        color: $color-text-primary !important;
-                    }
-                }
-            }
-        }
     }
 }
 

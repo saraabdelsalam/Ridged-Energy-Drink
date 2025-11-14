@@ -40,11 +40,9 @@ input, select, textarea {
 }
 
 // Ensure all text elements have proper color inheritance
-p, span, div, a, button, label, h1, h2, h3, h4, h5, h6 {
-  -webkit-text-fill-color: inherit;
-  color: inherit;
+p,span, div,label, h1, h2, h3, h4, h5, h6 {
+  color: $color-primary-text;
 }
-
 /* ==============================================
    ADDITIONAL GLOBAL STYLES
    ============================================== */
