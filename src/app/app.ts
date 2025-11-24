@@ -9,9 +9,9 @@ import { LandingPage } from "./modules/landing-page/landing-page";
   selector: 'app-root',
   imports: [RouterOutlet, ButtonModule, NavBar, Footer, LandingPage],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
   protected title = 'Ridged-Energy-Drink';
-date: any;
+  date: any;
 }
