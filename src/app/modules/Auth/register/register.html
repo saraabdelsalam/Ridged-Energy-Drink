@@ -1,0 +1,102 @@
+<div class="register-container">
+  <div class="register-card">
+    <div class="register-header">
+      <h2>Create Account</h2>
+      <p>Join Ridged Energy Community</p>
+    </div>
+
+    <form class="register-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <!-- first Name -->
+      <div class="form-field">
+        <label for="FirstName">First Name</label>
+        <input pInputText type="text" formControlName="FirstName"
+          id="FirstName" 
+          placeholder="Enter your first name"
+          styleClass="w-full"/>    
+
+        <small class="error-message" *ngIf="registrationForm.get('FirstName')?.touched">
+          {{getErrorMessage('FirstName')}}
+        </small>
+      </div>
+    <div class="form-field">
+        <label for="LastName">Last Name</label>
+        <input pInputText type="text"  formControlName="LastName"
+          id="LastName" 
+          placeholder="Enter your last name"
+          styleClass="w-full"/> 
+
+        <small class="error-message" *ngIf="registrationForm.get('LastName')?.touched">
+         {{getErrorMessage('LastName')}}
+        </small>   
+      </div>
+      <!-- Email -->
+      <div class="form-field">
+        <label for="Email">Email</label>
+        <p-iconfield iconPosition="left">
+          <p-inputicon styleClass="pi pi-envelope" />
+          <input pInputText type="text"  formControlName="Email"
+            id="email" 
+            type="email"
+            placeholder="Enter your email"
+            styleClass="w-full"/>
+        </p-iconfield>
+        <!-- Error messages -->
+        <small class="error-message" *ngIf="registrationForm.get('Email')?.touched">
+         {{getErrorMessage('Email')}}
+        </small>
+      </div>
+
+      <!-- Password -->
+      <div class="form-field">
+        <label for="Password">Password</label>
+        <p-iconfield iconPosition="left">
+          <p-inputicon styleClass="pi pi-lock" />
+          <p-password  formControlName="Password"
+            id="password"
+            placeholder="Enter your password"
+            [toggleMask]="true"
+            styleClass="w-full"
+            [inputStyleClass]="'w-full'">
+          </p-password>
+        </p-iconfield>
+
+        <small class="error-message" *ngIf="registrationForm.get('Password')?.touched">
+          {{getErrorMessage('Password')}}
+        </small>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-field">
+        <label for="ConfirmPassword">Confirm Password</label>
+        <p-iconfield iconPosition="left">
+          <p-inputicon styleClass="pi pi-lock" />
+          <p-password  formControlName="ConfirmPassword"
+            id="confirmPassword"
+            placeholder="Confirm your password"
+            [toggleMask]="true"
+            [feedback]="false"
+            styleClass="w-full"
+            [inputStyleClass]="'w-full'">
+          </p-password>
+        </p-iconfield>
+        <small class="error-message" *ngIf="registrationForm.get('ConfirmPassword')?.touched">
+          {{getErrorMessage('ConfirmPassword')}}
+        </small>
+      </div>
+      <!-- Submit Button -->
+      <p-button 
+        type="submit"
+        label="Create Account" 
+        icon="pi pi-user-plus"
+        styleClass="w-full"
+        [raised]="true"
+        [disabled]="registrationForm.invalid">
+      </p-button>
+
+      <!-- Login Link -->
+      <div class="login-link">
+        Already have an account? <a routerLink="/login">Sign In</a>
+      </div>
+    </form>
+  </div>
+</div>

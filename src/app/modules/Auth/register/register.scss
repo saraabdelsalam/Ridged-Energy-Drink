@@ -1,0 +1,144 @@
+@import '../../../../theme/variables';
+@import '../../../../theme/mixins';
+
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  // background: linear-gradient(135deg, $color-surface-bg 0%, $color-secondary 100%);
+
+  @include mobile-down {
+    padding: $spacing-base;
+  }
+}
+
+.register-card {
+  width: 100%;
+  max-width: 480px;
+  // background: $color-surface-white;
+  // border-radius: $border-radius-2xl;
+  padding: $spacing-3xl;
+  // box-shadow: $shadow-xl;
+
+  @include tablet-down {
+    padding: $spacing-2xl;
+  }
+
+  @include mobile-down {
+    padding: $spacing-xl;
+  }
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+
+  h2 {
+    @include heading-primary;
+    font-size: $font-size-3xl;
+    margin: 0 0 $spacing-sm 0;
+    color: $color-primary;
+
+    @include mobile-down {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  p {
+    @include text-secondary;
+    font-size: $font-size-base;
+    margin: 0;
+    color: $color-text-secondary;
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  label {
+    @include text-primary;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    color: $color-text-primary;
+  }
+}
+
+.login-link {
+  text-align: center;
+  margin-top: $spacing-base;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: $font-weight-semibold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// PrimeNG component overrides for this form
+::ng-deep {
+  .register-form {
+    .p-inputtext {
+      width: 100%;
+      padding: $spacing-md;
+      border-radius: $border-radius-lg;
+      border: 2px solid $color-surface-primary;
+      font-size: $font-size-base;
+      transition: all $transition-base;
+
+      &:enabled:hover {
+        border-color: $color-secondary;
+      }
+
+      &:enabled:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba(14, 63, 37, 0.1);
+      }
+    }
+
+    .p-password {
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .p-iconfield {
+      width: 100%;
+
+      .p-inputicon {
+        color: $color-text-secondary;
+      }
+    }
+
+
+    .p-button {
+      padding: $spacing-md;
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+      border-radius: $border-radius-lg;
+      transition: all $transition-base;
+
+      &:enabled:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+      }
+    }
+  }
+}
