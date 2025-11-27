@@ -1,0 +1,39 @@
+@import '../../../../theme/variables';
+@import '../../../../theme/mixins';
+
+.verify-container {
+  min-height: 100vh;
+  background: $color-surface-bg;
+  @include flex-center;
+  flex-direction: column;
+  padding: $spacing-base;
+}
+
+.verify-button {
+  @include button-primary;
+  font-size: $font-size-lg;
+  padding: $spacing-lg $spacing-2xl;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  i {
+    font-size: $font-size-xl;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Responsive adjustments
+  @include tablet-down {
+    font-size: $font-size-base;
+    padding: $spacing-md $spacing-xl;
+  }
+
+  @include mobile-down {
+    font-size: $font-size-sm;
+    padding: $spacing-sm $spacing-lg;
+  }
+}

@@ -73,8 +73,10 @@ export class RegisterComponent {
           if (response.success && response.statusCode == 200) {
               this.toast.success(response.message);
             if (response.data?.verificationToken) {
-              localStorage.setItem('verification_token', response.data?.verificationToken);
+              const verificationToken = response.data?.verificationToken;
+              localStorage.setItem('verification_token',verificationToken);
             }
+            this.router.navigate(['/verify-account']);
           }
           else {
             this.toast.error(response.message);

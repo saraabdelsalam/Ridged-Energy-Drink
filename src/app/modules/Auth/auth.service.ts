@@ -14,5 +14,7 @@ export class AuthService {
     register(payload: userRegisterRequest) {
         return this.http.post<userRegisterResponse>(`${this.baseUrl}/auth/register`, payload)
     }
-
+    verifyAccount( token: string){
+        return this.http.post<any>(`${this.baseUrl}/auth/verify-email`, { token });
+    }
 }
