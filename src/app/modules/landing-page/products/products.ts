@@ -31,7 +31,6 @@ export class Products {
   }
 
   getProducts() { 
-    console.log('Fetching products...', this.productsService.getProducts());
     return this.productsService.getProducts();
   }
 }

@@ -1,0 +1,52 @@
+<div class="login-header">
+      <h2>Login</h2>
+      <p>Welcome back to Ridged Energy Community</p>
+    </div>
+<div class="login-container">
+   <div class="login-visual">
+      <img src="assets/images/RIDGED.png" alt="Ridged text background" class="ridged-bg" />
+      <img src="assets/images/10.png" alt="Ridged Energy Drink" class="can-image" />
+    </div>
+  <div class="login-card">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email -->
+      <div class="form-field">
+        <label for="Email">Email</label>
+        <p-iconfield iconPosition="left">
+          <p-inputicon styleClass="pi pi-envelope" />
+          <input pInputText type="text" formControlName="Email" id="email" type="email" placeholder="Enter your email"
+            styleClass="w-full" />
+        </p-iconfield>
+        <!-- Error messages -->
+        <small class="error-message" *ngIf="loginForm.get('Email')?.touched">
+          {{getErrorMessage('Email')}}
+        </small>
+      </div>
+
+      <!-- Password -->
+      <div class="form-field">
+        <label for="Password">Password</label>
+        <p-iconfield iconPosition="left">
+          <p-inputicon styleClass="pi pi-lock" />
+          <p-password formControlName="Password" id="password" placeholder="Enter your password" [toggleMask]="true"
+            styleClass="w-full" [inputStyleClass]="'w-full'">
+          </p-password>
+        </p-iconfield>
+
+        <small class="error-message" *ngIf="loginForm.get('Password')?.touched">
+          {{getErrorMessage('Password')}}
+        </small>
+      </div>
+
+      <!-- Submit Button -->
+      <p-button type="submit" label="Sign In" icon="pi pi-sign-in" styleClass="w-full" [raised]="true"
+        [disabled]="loginForm.invalid">
+      </p-button>
+
+      <!-- Forgot Password Link -->
+      <div class="forgot-password-link">
+        <a routerLink="/forgot-password">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+</div>

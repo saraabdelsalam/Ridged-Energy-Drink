@@ -42,16 +42,17 @@
 }
 
 .register-card {
-  width: 100%;
-  max-width: 480px;
+  width: 50%;
   margin: 0 3rem;
 
   @include tablet-down {
     padding: $spacing-2xl;
+    width: 90%;
   }
 
   @include mobile-down {
     padding: $spacing-xl;
+    width: 90%;
   }
 }
 
@@ -89,7 +90,7 @@
     }
   }
 }
-  .hero-visual {
+  .register-visual {
     flex: 1;
     position: relative;
     display: flex;
@@ -104,12 +105,13 @@
     }
 
     .can-image {
+      width: 100%;
       position: absolute;
       z-index: 2;
       max-width: 450px;
     }
     @include tablet-down{
-      margin: 3rem 0;
+      display: none;
     }
   }
 // PrimeNG component overrides for this form
