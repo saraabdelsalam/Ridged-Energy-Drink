@@ -21,5 +21,10 @@ export class AuthService {
     login(payload: userLoginRequest){
         return this.http.post<userLoginResponse>(`${this.baseUrl}/auth/login`, payload);
     }
-    
+    forgotPassword(payload: { email: string }){
+        return this.http.post<any>(`${this.baseUrl}/auth/forgot-password`, payload);
+    }
+    resetPassword(payload: { token: string; newPassword: string; confirmPassword: string }){
+        return this.http.post<any>(`${this.baseUrl}/auth/reset-password`, payload);
+    }
 }
