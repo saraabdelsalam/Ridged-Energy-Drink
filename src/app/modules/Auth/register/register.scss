@@ -1,39 +1,9 @@
 @import '../../../../theme/variables';
 @import '../../../../theme/mixins';
 
-.register-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: $spacing-2xl;
-  // background: linear-gradient(135deg, $color-surface-bg 0%, $color-secondary 100%);
-
-  @include mobile-down {
-    padding: $spacing-base;
-  }
-}
-
-.register-card {
-  width: 100%;
-  max-width: 480px;
-  // background: $color-surface-white;
-  // border-radius: $border-radius-2xl;
-  padding: $spacing-3xl;
-  // box-shadow: $shadow-xl;
-
-  @include tablet-down {
-    padding: $spacing-2xl;
-  }
-
-  @include mobile-down {
-    padding: $spacing-xl;
-  }
-}
-
 .register-header {
   text-align: center;
-  margin-bottom: $spacing-3xl;
+  margin-top: $spacing-3xl;
 
   h2 {
     @include heading-primary;
@@ -52,12 +22,43 @@
     margin: 0;
     color: $color-text-secondary;
   }
+  @include tablet-down{
+    margin: $spacing-base 0 $spacing-base 0
+  }
+}
+.register-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  padding: $spacing-2xl;
+  gap: 2rem;
+
+  @include tablet-down {
+    justify-content: center;
+    padding: $spacing-base;
+    max-height: 100vh;
+  }
+}
+
+.register-card {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 3rem;
+
+  @include tablet-down {
+    padding: $spacing-2xl;
+  }
+
+  @include mobile-down {
+    padding: $spacing-xl;
+  }
 }
 
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: $spacing-xl;
+  gap: $spacing-lg;
 }
 
 .form-field {
@@ -75,7 +76,6 @@
 
 .login-link {
   text-align: center;
-  margin-top: $spacing-base;
   font-size: $font-size-sm;
   color: $color-text-secondary;
 
@@ -89,7 +89,29 @@
     }
   }
 }
+  .hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    .ridged-bg {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      max-width: 450px;
+    }
+
+    .can-image {
+      position: absolute;
+      z-index: 2;
+      max-width: 450px;
+    }
+    @include tablet-down{
+      margin: 3rem 0;
+    }
+  }
 // PrimeNG component overrides for this form
 ::ng-deep {
   .register-form {
@@ -100,6 +122,9 @@
       border: 2px solid $color-surface-primary;
       font-size: $font-size-base;
       transition: all $transition-base;
+      @include tablet-down{
+        font-size: $font-size-sm !important;
+      }
 
       &:enabled:hover {
         border-color: $color-secondary;
@@ -129,16 +154,26 @@
 
 
     .p-button {
+      width: 100%;
       padding: $spacing-md;
       font-size: $font-size-base;
       font-weight: $font-weight-bold;
       border-radius: $border-radius-lg;
       transition: all $transition-base;
+      background-color: $color-primary;
 
       &:enabled:hover {
         transform: translateY(-2px);
         box-shadow: $shadow-lg;
+        background-color: $color-primary-hover;
       }
     }
+    .p-button-label{
+      color: $color-surface-white !important;
+      }
+        .p-button-icon {
+    color: $color-surface-white !important;
+  }
+
   }
 }
